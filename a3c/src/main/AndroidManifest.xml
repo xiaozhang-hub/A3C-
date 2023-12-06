@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.a3c"
+    tools:ignore="ExtraText">
+
+    <!-- 权限声明 -->
+    <uses-permission
+        android:name="android.permission.CONTROL_VPN"
+        tools:ignore="ProtectedPermissions" /> <!-- VPN网络权限 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 允许程序获取网络信息状态 -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 允许程序访问网络 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- 外部存储读 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" /> <!-- 外部存储写 -->
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES"
+        tools:ignore="QueryAllPackagesPermission" /> <!-- 读取全部应用 -->
+
+    <application
+        android:requestLegacyExternalStorage="true"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.A3Cproject">
+
+        <!-- 注册 VPN service -->
+        <service
+            android:name=".Vpn_service.a3cvpn"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="android.permission.BIND_VPN_SERVICE">
+            <intent-filter>
+                <action android:name="android.net.VpnService" />
+            </intent-filter>
+        </service>
+
+        <!-- 注册 主页面 MainActivity -->
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 注册 选择APP页面 ChooseActivity -->
+        <activity android:name="com.example.a3c.App_choice.ChooseActivity"
+            android:label="ChooseActivity">
+        </activity>
+
+        <!-- 注册 选择PCAP文件页面 FileRead -->
+        <activity android:name="com.example.a3c.PCAPfile_read.FileRead"
+            android:label="FileRead">
+        </activity>
+
+    </application>
+
+</manifest>

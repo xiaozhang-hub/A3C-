@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">A3C</string>
+    <string name="choose">选择APP</string>
+    <string name="start">开始连接</string>
+    <string name="end">关闭连接</string>
+    <string name="application_info">应用列表</string>
+    <string name="allapp">所有应用</string>
+    <string name="testnet">网络状态测试</string>
+    <string name="testvpn">VPN状态测试</string>
+    <string name="server_address">服务器地址</string>
+    <string name="server_port">服务器端口</string>
+    <string name="secret">密钥</string>
+    <string name="input">提交</string>
+    <string name="clear">清空APP</string>
+    <string name="file">打开文件存储目录</string>
+    <string name="pcap">PCAP文件预览</string>
+</resources>
